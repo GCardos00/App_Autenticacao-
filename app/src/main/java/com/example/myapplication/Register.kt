@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,7 +31,7 @@ class Register : AppCompatActivity() {
         val btnRegister : Button = findViewById(R.id.register)
         btnRegister.setOnClickListener{
             if (inputLogin.isEmpty() || inputPass.isEmpty()) {
-                Toast.makeText(this,"O campo login ou senha está vazio",LENGTH_SHORT).show()
+                Toast.makeText(this,"Campo de inserção !",LENGTH_SHORT).show()
             }
                 createAccount(inputLogin.toString(), inputPass.toString())
         }
@@ -40,9 +41,11 @@ class Register : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(login, pass)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this,"Usuário criado com sucesso!",LENGTH_SHORT).show()
+                    Toast.makeText(this,"Criado com sucesso !",LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent);
                 } else {
-                    Toast.makeText(this,"Ocorreu algum erro na criação. Erro:"+task.exception,LENGTH_SHORT).show()
+                    Toast.makeText(this,"Erro na criação. Erro:"+task.exception,LENGTH_SHORT).show()
 
                 }
             }

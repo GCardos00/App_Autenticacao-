@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Login"
+        android:text="Acesso"
         android:textSize="45sp" />
 
     <EditText
@@ -38,7 +38,7 @@
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Acessar"/>
+        android:text="Logar"/>
 
     <Button
         android:id="@+id/register"
